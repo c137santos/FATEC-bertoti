@@ -15,4 +15,4 @@ An application of engineering principles to software creation, considering facto
 A practice involving complex decision-making with significant trade-offs and long-term consequences.
 In essence, software engineering goes beyond writing code to encompass the entire process of building and sustaining high-quality, efficient, and evolving software systems that meet stakeholder needs over time.
 
-I hope this clarifies the concept of software engineering and its distinctions from programming.
+Every software undergoes deprecations over time, and engineering serves to reduce the friction of time in the usefulness of the software. Scale is extremely important in software engineering, as a product can become entirely unviable if it grows under limiting pillars. Tradeoffs will always exist, and it is in software engineering that the analysis is made of which ones are bearable for the product that the software intends to deliver and the problems they aim to solve
