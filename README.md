@@ -27,61 +27,70 @@ Every software undergoes deprecations over time, and engineering serves to reduc
 
 **Layered Architecture Style**
 
-Ela é péssima de deploy. 
-Sobre receber novas funcionalidades é interessante. 
-Em relação de tolerancia a falha, ele é muito fraco, algo estoura, tudo alastra. 
-Modulariedade, ele é péssim, denuncia um extremo acoplamento. 
-O custo dele é bem barato.
-Sua performace é ruim.
-Para retornar sozinha, é melhor, consegue. 
-Escalabilidade é péssima, então não aguenta carga.
-É simples demais, e possivelmente ser testado de forma geral.
+É uma arquitetura pensada em camadas, regras de apresentação primeiro (frontend), regras de negócio, persistência, e por fim, banco. Isso promove isolamento das camadas, e caso seja necessário mudar o tipo de banco, isso causa grande impacto na camada do banco, mas pouco nas demais. 
 
-Aplicações GIS que lidam com a visualização de mapas, análise de dados geoespaciais e consultas frequentemente empregam uma arquitetura em camadas para organizar essas funcionalidades distintas.
+![image](https://github.com/c137santos/FATEC-bertoti/assets/92645535/e0e96888-7c3c-47df-9b9c-b50178cd7c12)
+
+
+1. Ela é péssima de deploy. 
+2. Sobre receber novas funcionalidades é interessante. 
+3. Em relação de tolerancia a falha, ele é muito fraco, algo estoura, o erro alastra. 
+4. Modulariedade é péssima, algo que denuncia um extremo acoplamento. 
+5. O custo dele é bem barato.
+6. Sua performace é ruim.
+7. Para retornar sozinha, é melhor, consegue. 
+8. Escalabilidade é péssima, então não aguenta carga.
+9. É simples demais, e possivelmente ser testado de forma geral. Os testes são mais fáceis porque os componentes pertencem a camadas específicas, e dá para testar separadamente. 
+
+Aplicações GIS que lidam com a visualização de mapas, análise de dados geoespaciais e consultas frequentemente empregam uma arquitetura em camadas para organizar essas funcionalidades distintas. Em sistemas de informação geográfica, como mapas digitais, a estrutura em camadas é frequentemente utilizada. Cada camada representa diferentes conjuntos de dados, como estradas, fronteiras, relevos, etc. Essas camadas podem interagir para fornecer uma visão completa e rica da informação geográfica.
+
+[Padroes de Arquitetura](https://priyalwalpita.medium.com/software-architecture-patterns-layered-architecture-a3b89b71a057)
 
 **Pipeline Architecture Style**
 
-Ela é ruim de deploy. 
-Sobre receber novas funcionalidades é bom. 
-Em relação de tolerancia a falha, ele é mediocre, algo estoura, tudo alastra. 
-Modulariedade, ele é interessante, apesar de ter fraca tolerancia a falha. 
-O custo dele é bem barato.
-Sua performace é ruim.
-Para retornar sozinha, é melhor, consegue. 
-Escalabilidade é péssima, então não aguenta carga.
-É simples demais, e possivelmente ser testado de forma geral.
-E é possível ser bem testado. 
+Utiliza filtros e encaminhamento como tubos. Os tubos são geralmente unidirecionais e ponto a ponto, o que significa que não transmitem de um filtro para vários filtros. 
 
-Em sistemas de processamento de imagens e vídeos, a arquitetura de Pipeline é aplicada para realizar tarefas como compressão, filtragem e análise, dividindo o processo em estágios consecutivos.
+1. Ela é ruim de deploy. 
+2. Sobre receber novas funcionalidades é bom. 
+3. Em relação de tolerancia a falha, ele é mediocre, algo estoura, tudo alastra. A tolerância a falhas é baixa porque o design monolítico leva a um único ponto de falha. A falha de qualquer filtro pode levar à falha de todo o pipeline.
+4. Modulariedade, ele é interessante, apesar de ter fraca tolerancia a falha. 
+5. O custo dele é bem barato.
+6. Sua performace é ruim.
+7. Para retornar sozinha, é melhor, consegue. 
+8. Escalabilidade é péssima, então não aguenta carga.
+9. É simples demais, e possivelmente ser testado de forma geral. Por ser um estilo de arquitetura monolítica, as implantações e os testes são difíceis. Mesmo mudanças simples exigem que todo o sistema seja totalmente testado e reimplantado.
+10. E é possível ser bem testado. 
+
+Em sistemas de processamento de imagens e vídeos, a arquitetura de Pipeline é aplicada para realizar tarefas como compressão, filtragem e análise, dividindo o processo em estágios consecutivos. Outra questão seria as pipelines voltadas as ETLs. Ou fluxo de pipelines, onde existe etapas, algo só passa para próxima, quando 
 
 **Microkernel Architecture Style**
 
-Ela é muito bom de deploy. 
-Sobre receber novas funcionalidades é bom. 
-Em relação de tolerancia a falha, ele é ótimo. 
-Modulariedade é excelente
-O custo dele é bem barato.
-Sua performace é bem bom.
-Para retornar sozinha, é melhor, se ergue bem. 
-Escalabilidade é boa, aguenta carga.
-Um pouco menos simples, mas ainda dá para aprender bastante.
-E muito bem estável. 
+1. Ela é muito bom de deploy. 
+2. Sobre receber novas funcionalidades é bom. 
+3. Em relação de tolerancia a falha, ele é ótimo. 
+4. Modulariedade é excelente
+5. O custo dele é bem barato.
+6. Sua performace é bem bom.
+7. Para retornar sozinha, é melhor, se ergue bem. 
+8. Escalabilidade é boa, aguenta carga.
+9. Um pouco menos simples, mas ainda dá para aprender bastante.
+10. E muito bem estável. 
 
-Sistemas embarcados, a abordagem microkernel é vantajosa ao isolar funcionalidades críticas, garantindo maior segurança, confiabilidade e a capacidade de atualizar componentes específicos sem comprometer a estabilidade do sistema como um todo.
+Sistemas embarcados, a abordagem microkernel é vantajosa ao isolar funcionalidades críticas, garantindo maior segurança, confiabilidade e a capacidade de atualizar componentes específicos sem comprometer a estabilidade do sistema como um todo. Algo sobre o SO.
 
 **Event-Driven Architecture Style**
 
-Ela é bom de deploy. 
-Sobre receber novas funcionalidades de forme excelente. 
-Em relação de tolerancia a falha, é excelente. 
-Modulariedade é muito bom.
-Ele é muito caro.
-Sua performace não é boa.
-Para retornar sozinha, é melhor, se ergue bem. 
-Escalabilidade é perfeito, aguenta carga.
-Não é nada simples
-Ele é super estável.
+1. Ela é bom de deploy. 
+2. Sobre receber novas funcionalidades de forme excelente. 
+3. Em relação de tolerancia a falha, é excelente. 
+4. Modulariedade é muito bom.
+5. Ele é muito caro.
+6. Sua performace não é boa.
+7. Para retornar sozinha, é melhor, se ergue bem. 
+8. Escalabilidade é perfeito, aguenta carga.
+9. Não é nada simples
+10. Ele é super estável.
 
-Sistema de Notificações em uma Plataforma de Comércio Eletrônico. Ela ajuda a lidar com diferentes eventos, como confirmações de pedidos, de maneira eficiente e independente.
+Sistema de Notificações em uma Plataforma de Comércio Eletrônico. Ela ajuda a lidar com diferentes eventos, como confirmações de pedidos, de maneira eficiente e independente. Tem a capacidade de unir sistemas diferentes por meio de um orquestrador, por exemplo, kafka. 
 
 
