@@ -94,6 +94,7 @@ Sistemas embarcados, a abordagem microkernel é vantajosa ao isolar funcionalida
 Sistema de Notificações em uma Plataforma de Comércio Eletrônico. Ela ajuda a lidar com diferentes eventos, como confirmações de pedidos, de maneira eficiente e independente. Tem a capacidade de unir sistemas diferentes por meio de um orquestrador, por exemplo, kafka. 
 
 **Atividade 03: Análise da Arquitetura**
+
 A estrutura em pipeline é a melhor escolha para o problema da API. No processamento de dados climáticos, cada passo depende do anterior, tornando o acoplamento menos preocupante. Como estamos lidando com um sistema desktop, não será necessário deploy.
 Dada a natureza do projeto, feito por alunos do 2º semestre, a simplicidade é crucial, e a abordagem em pipeline atende bem a esse requisito.
 Por ser um programa descartável e não exigir evolução contínua, as limitações da pipeline em evolução e escalabilidade não são um problema. Contudo, a tolerância a falhas pode ser um ponto sensível devido à quantidade de dados, e a falta de modularidade pode dificultar a colaboração eficiente da equipe de sete pessoas.
@@ -106,8 +107,7 @@ Arquitetura de pipeline
 
 Classes de uma pipeline
 
-![image](https://github.com/c137santos/FATEC-bertoti/assets/92645535/37ca3efc-c488-48f4-bdf9-5a56f947d2f9)
-
+![image](source/UML.jpg)
 
 **Atividade 06: Escrever o código em Java**
 
