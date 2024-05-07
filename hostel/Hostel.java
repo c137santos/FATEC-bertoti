@@ -5,16 +5,16 @@ import java.util.List;
 
 public class Hostel {
     private int capacidade;
-    private List<Alojamento> alojamentos;
+    private List<Hospede> alojamentos;
     private List<Reserva> reservas;
     private List<Hospede> hospedes;
 
-    public void acionarLimpeza(Alojamento alojamento){
+    public void acionarLimpeza(Hospede alojamento){
         System.out.println("Acionando limpeza do alojamento");
     };
 
     public void reservarAcomodacao(int codigoAcomodacao, long cpfHospede, String dataStringCheckIn, String dataSaidaCheckOut){
-        Alojamento alojamento = new Alojamento();
+        Hospede alojamento = new Hospede();
         Acomodacao acomodacao = alojamento.getAcomodacao(codigoAcomodacao);
         
         Hospede hospede = new Hospede();
