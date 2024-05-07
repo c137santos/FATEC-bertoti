@@ -1,29 +1,39 @@
-# FATEC-bertoti
+<link rel="stylesheet" type="text/css" href="style.css">
 
-Within Google, we sometimes say, “Software engineering is programming integrated over time.” Programming is certainly a significant part of software engineering: after all, programming is how you generate new software in the first place. If you accept this distinction, it also becomes clear that we might need to delineate between programming tasks (development) and software engineering tasks (development, modification, maintenance). The addition of time adds an important new dimension to programming. Cubes aren’t squares, distance isn’t velocity. Software engineering isn’t programming.
+# Engenharia de Software com Bertoti
+
+<div class="imagem-container">
+  <img src="./imgs/dr.jpeg">
+  <figcaption>Dentro do Google, dizem: "Engenharia de software é programação integrada ao tempo." </figcaption>
+</div>
+
+<br>
+A programação é certamente uma parte significativa da engenharia de software: afinal, é por meio da programação que você gera novo software. Se aceitarmos essa distinção, também fica claro que talvez precisemos delinear entre tarefas de programação (desenvolvimento) e tarefas de engenharia de software (desenvolvimento, modificação, manutenção). O tempo adiciona uma nova dimensão importante à programação. Cubos não são quadrados, distância não é velocidade. Engenharia de software não é programação.
+
+03 são as diferenças críticas entre programação e engenharia de software: tempo, escala e os compromissos em jogo. Em um projeto de engenharia de software, os engenheiros precisam se preocupar mais com a passagem do tempo e a eventual necessidade de mudança. Em uma organização de engenharia de software, precisamos nos preocupar mais com a escala e eficiência, tanto para o software que produzimos quanto para a organização que o produz. Finalmente, como engenheiros de software, somos solicitados a tomar decisões mais complexas com resultados de alto risco, frequentemente baseados em estimativas imprecisas de tempo e crescimento.
+
+Então, o que é engenharia de software?
+
+Com base nessas distinções, podemos definir a engenharia de software como:
+
+* Uma disciplina mais ampla do que a programação, abrangendo todo o ciclo de vida do software, desde o desenvolvimento inicial até a manutenção de longo prazo.
+* Uma aplicação de princípios de engenharia à criação de software, considerando fatores como eficiência, escalabilidade, manutenibilidade e adaptabilidade ao longo do tempo.
+* Prática que envolve tomada de decisões complexas com compensações significativas e consequências de longo prazo.
+
+Ou seja, 
 
 
-We see three critical differences between programming and software engineering: time, scale, and the trade-offs at play. On a software engineering project, engineers need to be more concerned with the passage of time and the eventual need for change. In a software engineering organization, we need to be more concerned about scale and efficiency, both for the software we produce as well as for the organization that is producing it. Finally, as software engineers, we are asked to make more complex decisions with higher-stakes outcomes, often based on imprecise estimates of time and growth.
+A engenharia de software vai além da escrita de código para abranger todo o processo de construção e sustentação de sistemas de software eficientes, de alta qualidade e em evolução, que atendam às necessidades das partes interessadas ao longo do tempo.
 
+Todo software sofre depreciações ao longo do tempo, e a engenharia serve para reduzir o atrito do tempo na utilidade do software. A escala é extremamente importante na engenharia de software, pois um produto pode se tornar completamente inviável se crescer sob pilares limitadores. Compromissos sempre existirão, e é na engenharia de software que é feita a análise de quais são suportáveis para o produto que o software pretende entregar e os problemas que ele visa resolver.
 
-So, what is software engineering?
-
-Based on these distinctions, we can define software engineering as:
-
-A broader discipline than programming, encompassing the entire lifecycle of software, from initial development to long-term maintenance.
-An application of engineering principles to software creation, considering factors like efficiency, scalability, maintainability, and adaptability over time.
-A practice involving complex decision-making with significant trade-offs and long-term consequences.
-In essence, software engineering goes beyond writing code to encompass the entire process of building and sustaining high-quality, efficient, and evolving software systems that meet stakeholder needs over time.
-
-Every software undergoes deprecations over time, and engineering serves to reduce the friction of time in the usefulness of the software. Scale is extremely important in software engineering, as a product can become entirely unviable if it grows under limiting pillars. Tradeoffs will always exist, and it is in software engineering that the analysis is made of which ones are bearable for the product that the software intends to deliver and the problems they aim to solve
-
-## Atividade número dois: mencione três threadoff.
+## Atividade 02: mencione três threadoff.
 
 * Banco de dados mal pensado para uma arquitetura que vai requer escalabilidade. Ou seja, ganha-se tempo com o lançamento do MVP, mas pode travar o desenvolvimento futuro. 
 * Linguaguem de programação com curva de aprendizado complexa, porém, rápida, mas que não se encontra mão de obra no mercado.
 * Uso de serviços externos como AWS para escalabilidade, porém, custo em dolar AWS para cada operação. 
 
-## Atividade número três: Comente os threadoff das arquiteturas apresentados
+## Atividade 03: Comente os threadoff das arquiteturas apresentados
 
 **Layered Architecture Style**
 
@@ -101,13 +111,13 @@ Por ser um programa descartável e não exigir evolução contínua, as limitaç
 
 **Atividade 04: Definição da arquitetura**
 
-Arquitetura de pipeline
+Arquitetura de camadas
 
 **Atividade 05: classes uml**
 
 Classes de uma pipeline
 
-![image](source/UML.jpg)
+![image](imgs/UML.jpg)
 
 **Atividade 06: Escrever o código em Java**
 
