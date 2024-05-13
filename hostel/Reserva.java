@@ -1,31 +1,51 @@
 package hostel;
-import java.sql.Date;
 import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class Reserva {
-    private List<Acomodacao> acomodacoes;
+    private Acomodacao acomodacao;
     private Hospede titular;
-    private Date checkIn;
-    private Date checkOut;
+    private LocalDate checkIn;
+    private LocalDate checkOut;
     private double valorTotal;
 
-    public double calcularValorTotalReserva(int codigoAcomodacao) {
-        int dias = (int) ((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24));
-        Acomodacao acomodacao = getAcomodacao(codigoAcomodacao);
-        if (acomodacao == null) {
-            return 0.0;
-        }
-        Double diaria = acomodacao.getValorDiaria(codigoAcomodacao);
+    public Reserva(Hospede titular, Acomodacao acomodacao, String checkIn, String checkOut, double valorTotal) throws ParseException {
+        this.acomodacao = acomodacao;
+        this.titular = titular;
+        this.checkIn = convertStringToDate(checkIn);
+        this.checkOut = convertStringToDate(checkOut);
+        this.valorTotal = calcularValorTotalReserva(valorTotal);
+    }
+    public double calcularValorTotalReserva(double codigoAcomodacao) {
+        Date checkInDate = java.sql.Date.valueOf(checkIn);
+        Date checkOutDate = java.sql.Date.valueOf(checkOut);
+        int dias = (int) ((checkOutDate.getTime() - checkInDate.getTime()) / (1000 * 60 * 60 * 24));
+        Double diaria = acomodacao.getValorDiaria();
         valorTotal = dias * diaria;
         return valorTotal;
     }
 
-    public Acomodacao getAcomodacao(int codigoAcomodacao) {
-        for (Acomodacao acomodacao : acomodacoes) {
-            if (acomodacao.getCodigo() == codigoAcomodacao) {
-                return acomodacao;
-            }
-        }
-        return null;
+    public LocalDate convertStringToDate(String strDate) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate date = LocalDate.parse(strDate, formatter);
+        return date;
+    }
+    public Hospede getTitular() {
+        return titular;
+    }
+
+
+    public String getCheckIn() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        return checkIn.format(formatter);
+    }
+
+    public String getCheckOut() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        return checkOut.format(formatter);
     }
 }

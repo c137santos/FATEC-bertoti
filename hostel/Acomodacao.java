@@ -7,7 +7,8 @@ public class Acomodacao {
     private double precoDiaria;
     private String descricao;
 
-    public Acomodacao(int codigo, String tipo, Boolean ocupado, double precoDiaria, String descricao) {
+    public Acomodacao(int codigo, String tipo, Boolean ocupado, double precoDiaria,
+    String descricao) {
         this.codigo = codigo;
         this.tipo = tipo;
         this.ocupado = ocupado;
@@ -17,5 +18,12 @@ public class Acomodacao {
 
     public void changePrecoDiaria(double novoPreco) {
         this.precoDiaria = novoPreco;
+    }
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public double getValorDiaria() {
+        return precoDiaria;
     }
 }

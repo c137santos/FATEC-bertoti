@@ -2,12 +2,23 @@ package hostel;
 
 public class Hospede {
     private String nome;
-    private String tipoDocumento;
-    private String identificavaoDocumento;
-    private int idade;
+    private String cpf;
 
-    public getHospedeInfo(){
-        return "Nome: " + this.nome + " - Tipo Documento: " + this.tipoDocumento + " - Identificação Documento: " + this.identificavaoDocumento + " - Idade: " + this.idade;
+    public Hospede(String nome, String cpf){
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
+    public String getHospedeInfo(){
+        return "Nome: " + this.nome + " - Tipo CPF: " + this.cpf + "";
+    }
+
+    public String getNome(){
+        return this.nome;
+    }
+
+    public String getCpf(){
+        return this.cpf;
     }
     
 }
