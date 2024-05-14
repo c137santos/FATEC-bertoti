@@ -1,7 +1,5 @@
 package hostel;
-import java.util.List;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -37,7 +35,6 @@ public class Reserva {
     public Hospede getTitular() {
         return titular;
     }
-
 
     public String getCheckIn() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");

@@ -10,23 +10,16 @@ public class Hostel {
     private List<Reserva> reservas;
     private List<Hospede> hospedes;
 
-    public void acionarLimpeza(Hospede alojamento){
-        System.out.println("Acionando limpeza do alojamento");
-    };
-
     public Hostel(){
-        capacidade = 0;
+        capacidade = 2;
         alojamentos = new ArrayList<Alojamento>();
         reservas = new ArrayList<Reserva>();
         hospedes = new ArrayList<Hospede>();
     }
 
     public void reservarAcomodacao(int codigoAcomodacao, String cpfHospede, String nomeHospede, String checkIn, String checkOut) throws ParseException{
-        
         Acomodacao acomodacao = getAcomodacao(codigoAcomodacao);
-        
         Hospede titular = cadastrarHospede(nomeHospede, cpfHospede);
-    
         Reserva reserva = new Reserva(titular, acomodacao, checkIn, checkOut);
         reservas.add(reserva);
     };
@@ -49,6 +42,10 @@ public class Hostel {
         alojamentos.add(alojamento);
     }
 
+    public List<Hospede> getHospedes() {
+        return hospedes;
+    }
+
     public Acomodacao getAcomodacao(int codigoAcomodacao) {
         for (Alojamento alojamento : alojamentos) {
 
@@ -59,8 +56,12 @@ public class Hostel {
         return null;
     }
 
-    public List<Hospede> getHospedes() {
-        return hospedes;
+    public Boolean verificarLotacaoAlojamentos(){
+        for(Alojamento alojamento : alojamentos){
+            if (!alojamento.verificarLotacao()) {
+                return false;
+            }
+        }
+        return true;
     }
-
 }

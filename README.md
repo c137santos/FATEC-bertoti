@@ -117,7 +117,7 @@ Arquitetura de camadas
 
 Classes de uma pipeline
 
-![image](imgs/UML.jpg)
+![image](imgs/UML2.jpeg)
 
 **Atividade 06: Escrever o código em Java**
 

@@ -9,10 +9,6 @@ public class Hospede {
         this.cpf = cpf;
     }
 
-    public String getHospedeInfo(){
-        return "Nome: " + this.nome + " - Tipo CPF: " + this.cpf + "";
-    }
-
     public String getNome(){
         return this.nome;
     }

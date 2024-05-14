@@ -28,8 +28,8 @@ public class Alojamento {
         return lotado;
     }
 
-    public Acomodacao criarAcomodacao(int codigo, String tipo, Boolean ocupado, double precoDiaria, String descricao) {
-        Acomodacao acomodacao = new Acomodacao(codigo, tipo, ocupado, precoDiaria, descricao);
+    public Acomodacao criarAcomodacao(int codigo, String tipo, Boolean ocupado, double precoDiaria) {
+        Acomodacao acomodacao = new Acomodacao(codigo, tipo, ocupado, precoDiaria);
         acomodacoes.add(acomodacao);
         return acomodacao;
     }
