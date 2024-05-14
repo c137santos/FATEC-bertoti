@@ -27,7 +27,7 @@ public class Hostel {
         
         Hospede titular = cadastrarHospede(nomeHospede, cpfHospede);
     
-        Reserva reserva = new Reserva(titular, acomodacao, checkIn, checkOut, 0.0);
+        Reserva reserva = new Reserva(titular, acomodacao, checkIn, checkOut);
         reservas.add(reserva);
     };
 
@@ -43,6 +43,10 @@ public class Hostel {
 
     public List<Alojamento> getAlojamentos() {
         return alojamentos;
+    }
+
+    public void addAlojamento(Alojamento alojamento) {
+        alojamentos.add(alojamento);
     }
 
     public Acomodacao getAcomodacao(int codigoAcomodacao) {

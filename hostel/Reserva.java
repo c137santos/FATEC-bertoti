@@ -13,14 +13,14 @@ public class Reserva {
     private LocalDate checkOut;
     private double valorTotal;
 
-    public Reserva(Hospede titular, Acomodacao acomodacao, String checkIn, String checkOut, double valorTotal) throws ParseException {
-        this.acomodacao = acomodacao;
+    public Reserva(Hospede titular, Acomodacao acomodacao, String checkIn, String checkOut) throws ParseException {
         this.titular = titular;
+        this.acomodacao = acomodacao;
         this.checkIn = convertStringToDate(checkIn);
         this.checkOut = convertStringToDate(checkOut);
-        this.valorTotal = calcularValorTotalReserva(valorTotal);
+        this.valorTotal = calcularValorTotalReserva();
     }
-    public double calcularValorTotalReserva(double codigoAcomodacao) {
+    public double calcularValorTotalReserva() {
         Date checkInDate = java.sql.Date.valueOf(checkIn);
         Date checkOutDate = java.sql.Date.valueOf(checkOut);
         int dias = (int) ((checkOutDate.getTime() - checkInDate.getTime()) / (1000 * 60 * 60 * 24));
@@ -48,4 +48,9 @@ public class Reserva {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         return checkOut.format(formatter);
     }
+
+    public Double getValorTotal() {
+        return valorTotal;
+    }
+
 }

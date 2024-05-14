@@ -13,6 +13,7 @@ public class TesteHostel {
         hostel = new Hostel();
         Alojamento alojamento = new Alojamento("Alojamento 1", "coletivo", 10, null);
         alojamento.criarAcomodacao(1212, "coletivo", true, 100.0, "beliche");
+        hostel.addAlojamento(alojamento);
     }
     
     @Test
@@ -28,8 +29,9 @@ public class TesteHostel {
         assertEquals("02-01-2020", hostel.getReservas().get(0).getCheckOut());
     }   
 
-    // @Test
-    // public void testVerificarPrecoReserva() throws ParseException {
-    //     hostel.reservarAcomodacao(1212, "12345678901", "Fulano", "01-01-2020", "02-01-2020");
-    // }
+    @Test
+    public void testVerificarPrecoReserva() throws ParseException {
+        hostel.reservarAcomodacao(1212, "12345678901", "Fulano", "01-01-2020", "03-01-2020");
+        assertEquals(200.0, hostel.getReservas().get(0).getValorTotal(), 0.01);
+    }
 }
