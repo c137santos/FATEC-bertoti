@@ -12,7 +12,7 @@ public class TesteHostel {
     public void setUp() {
         hostel = new Hostel();
         Alojamento alojamento = new Alojamento("Alojamento 1", "coletivo", 1, null);
-        alojamento.criarAcomodacao(1212, "coletivo", true, 100.0, "beliche");
+        alojamento.criarAcomodacao(1212, "coletivo", true, 100.0);
         hostel.addAlojamento(alojamento);
     }
     

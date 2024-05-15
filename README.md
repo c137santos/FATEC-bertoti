@@ -2,6 +2,8 @@
 
 # Engenharia de Software com Bertoti
 
+## Atividade 01: O que é engenharia de software para o Google?
+
 <div class="imagem-container">
   <img src="./imgs/dr.jpeg">
   <figcaption>Dentro do Google, dizem: "Engenharia de software é programação integrada ao tempo." </figcaption>
@@ -12,7 +14,9 @@ A programação é certamente uma parte significativa da engenharia de software:
 
 03 são as diferenças críticas entre programação e engenharia de software: tempo, escala e os compromissos em jogo. Em um projeto de engenharia de software, os engenheiros precisam se preocupar mais com a passagem do tempo e a eventual necessidade de mudança. Em uma organização de engenharia de software, precisamos nos preocupar mais com a escala e eficiência, tanto para o software que produzimos quanto para a organização que o produz. Finalmente, como engenheiros de software, somos solicitados a tomar decisões mais complexas com resultados de alto risco, frequentemente baseados em estimativas imprecisas de tempo e crescimento.
 
-Então, o que é engenharia de software?
+Então, o que é engenharia de software na sua visão?
+
+Threadoff, escabilidade e no tempo. 
 
 Com base nessas distinções, podemos definir a engenharia de software como:
 
@@ -29,18 +33,23 @@ Todo software sofre depreciações ao longo do tempo, e a engenharia serve para 
 
 ## Atividade 02: mencione três threadoff.
 
-* Banco de dados mal pensado para uma arquitetura que vai requer escalabilidade. Ou seja, ganha-se tempo com o lançamento do MVP, mas pode travar o desenvolvimento futuro. 
-* Linguaguem de programação com curva de aprendizado complexa, porém, rápida, mas que não se encontra mão de obra no mercado.
-* Uso de serviços externos como AWS para escalabilidade, porém, custo em dolar AWS para cada operação. 
+Threadoff do dia-a-dia
+
+1º Durmo mais tempo, me atraso para o trabalho.
+2º Tenho razão ou fico em paz, em uma briga.
+3º Recomeço uma carreira que tenha de trabalhar HomeOffice ganhando menos hoje, ou continuo na mesma carreira qual já sou consolidada e qualificada, mas com o trabalhando presencial predominantemente.
+
+THreadoff da vida de programação
+
+1º Banco de dados mal pensado para uma arquitetura que vai requer escalabilidade. Ou seja, ganha-se tempo com o lançamento do MVP, mas pode travar o desenvolvimento futuro. 
+2º Linguaguem de programação com curva de aprendizado complexa, porém, rápida, mas que não se encontra mão de obra no mercado.
+3º* Uso de serviços externos como AWS para escalabilidade, porém, custo em dolar AWS para cada operação. 
 
 ## Atividade 03: Comente os threadoff das arquiteturas apresentados
 
 **Layered Architecture Style**
 
 É uma arquitetura pensada em camadas, regras de apresentação primeiro (frontend), regras de negócio, persistência, e por fim, banco. Isso promove isolamento das camadas, e caso seja necessário mudar o tipo de banco, isso causa grande impacto na camada do banco, mas pouco nas demais. 
-
-![image](https://github.com/c137santos/FATEC-bertoti/assets/92645535/e0e96888-7c3c-47df-9b9c-b50178cd7c12)
-
 
 1. Ela é péssima de deploy. 
 2. Sobre receber novas funcionalidades é interessante. 
@@ -103,15 +112,13 @@ Sistemas embarcados, a abordagem microkernel é vantajosa ao isolar funcionalida
 
 Sistema de Notificações em uma Plataforma de Comércio Eletrônico. Ela ajuda a lidar com diferentes eventos, como confirmações de pedidos, de maneira eficiente e independente. Tem a capacidade de unir sistemas diferentes por meio de um orquestrador, por exemplo, kafka. 
 
-**Atividade 03: Análise da Arquitetura**
+**Atividade 04: Análise da Arquitetura, e qual você aplicaria?**
 
-A estrutura em pipeline é a melhor escolha para o problema da API. No processamento de dados climáticos, cada passo depende do anterior, tornando o acoplamento menos preocupante. Como estamos lidando com um sistema desktop, não será necessário deploy.
-Dada a natureza do projeto, feito por alunos do 2º semestre, a simplicidade é crucial, e a abordagem em pipeline atende bem a esse requisito.
-Por ser um programa descartável e não exigir evolução contínua, as limitações da pipeline em evolução e escalabilidade não são um problema. Contudo, a tolerância a falhas pode ser um ponto sensível devido à quantidade de dados, e a falta de modularidade pode dificultar a colaboração eficiente da equipe de sete pessoas.
+Arquitetura de camadas para um sistema de reserva de hostel. 
+Sabendo que os hostel dispõe de diferentes orçamento, é importante ter peças móveis que atendam seus usuários. 
+Ruim é a parte do deploy, que é mais complexo, e qualquer hostel precisa está com seu site na internet para se internacionalizar. Mas o custo dele é barato.
+No geral, é bem simples, e isso importa muito para as pessoas que vão manejar não tem foco no desenvolvimento de um software de alto desempenho, e sim, o turísmo. 
 
-**Atividade 04: Definição da arquitetura**
-
-Arquitetura de camadas
 
 **Atividade 05: classes uml**
 
@@ -121,10 +128,10 @@ Classes de uma pipeline
 
 **Atividade 06: Escrever o código em Java**
 
-Escrevemos o código em Java tanto da classe Dados quanto de Resultado. 
-Nos arquivos Dados.java e Resultado.java.
+Escrevemos o código em Java tanto do UML acima 
+Nos arquivos Hostel.java, Acomodacao.java, Alojamento.java, Hospede.java e Reserva.java.
 
 **Atividade 07: Testes dos códigos**
 
-Testes de assert com AssertEqualsTest.Java
+Testes de assert com TesteHostel.java
 
