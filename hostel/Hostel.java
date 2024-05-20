@@ -49,7 +49,7 @@ public class Hostel {
     public Acomodacao getAcomodacao(int codigoAcomodacao) {
         for (Alojamento alojamento : alojamentos) {
 
-            if (alojamento.getAcomodacao(codigoAcomodacao).getCodigo() == codigoAcomodacao) {
+            if (alojamento.getAcomodacao(codigoAcomodacao) != null) {
                 return alojamento.getAcomodacao(codigoAcomodacao);
             }
         }

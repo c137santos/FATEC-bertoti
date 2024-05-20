@@ -35,11 +35,15 @@ public class TesteHostel {
         assertEquals(200.0, hostel.getReservas().get(0).getValorTotal(), 0.01);
     }
 
-    // @Test
-    // public void testVerificaLotacao() {
-    //     Alojamento alojamento = new Alojamento("Alojamento 2", "coletivo", 1, null);
-    //     alojamento.criarAcomodacao(2424, "coletivo", true, 100.0, "beliche");
-    //     hostel.addAlojamento(alojamento);
-    //     assertEquals(true, hostel.verificarLotacaoAlojamentos());
-    // }
+    @Test
+    public void testVerificaLotacaoTrue() throws ParseException {
+        hostel.reservarAcomodacao(1212, "12345678901", "Fulano", "01-01-2020", "02-01-2020");
+        Alojamento alou = new Alojamento("Alojamento 2", "coletivo", 1, null);
+        alou.criarAcomodacao(666, "beliche", false, 100.0);
+        hostel.addAlojamento(alou);
+        hostel.reservarAcomodacao(666, "12345678901", "Fulano", "01-01-2020", "02-01-2020");
+        assertEquals(true, hostel.verificarLotacao());
+        assertEquals(2, hostel.getAlojamentos().size());
+    }
+
 }

@@ -46,4 +46,8 @@ public class Alojamento {
         }
         return null;
     }
+
+    public void criarAcomodacao(int i, String string, boolean b, double d, String string2) {
+        throw new UnsupportedOperationException("Unimplemented method 'criarAcomodacao'");
+    }
 }

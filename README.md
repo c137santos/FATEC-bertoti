@@ -125,7 +125,7 @@ No geral, é bem simples, e isso importa muito para as pessoas que vão manejar 
 Classes de parte de camada
 
 
-![image](imgs/UML3.jpeg)
+![image](imgs/UML3.jpg)
 
 **Atividade 06: Escrever o código em Java**
 
