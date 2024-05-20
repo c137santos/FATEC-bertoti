@@ -56,7 +56,7 @@ public class Hostel {
         return null;
     }
 
-    public Boolean verificarLotacaoAlojamentos(){
+    public Boolean verificarLotacao(){
         for(Alojamento alojamento : alojamentos){
             if (!alojamento.verificarLotacao()) {
                 return false;

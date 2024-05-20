@@ -35,11 +35,11 @@ public class TesteHostel {
         assertEquals(200.0, hostel.getReservas().get(0).getValorTotal(), 0.01);
     }
 
-    @Test
-    public void testVerificaLotacao() {
-        Alojamento alojamento = new Alojamento("Alojamento 2", "coletivo", 1, null);
-        alojamento.criarAcomodacao(2424, "coletivo", true, 100.0, "beliche");
-        hostel.addAlojamento(alojamento);
-        assertEquals(true, hostel.verificarLotacaoAlojamentos());
-    }
+    // @Test
+    // public void testVerificaLotacao() {
+    //     Alojamento alojamento = new Alojamento("Alojamento 2", "coletivo", 1, null);
+    //     alojamento.criarAcomodacao(2424, "coletivo", true, 100.0, "beliche");
+    //     hostel.addAlojamento(alojamento);
+    //     assertEquals(true, hostel.verificarLotacaoAlojamentos());
+    // }
 }

@@ -39,7 +39,7 @@ Threadoff do dia-a-dia
 2º Tenho razão ou fico em paz, em uma briga.
 3º Recomeço uma carreira que tenha de trabalhar HomeOffice ganhando menos hoje, ou continuo na mesma carreira qual já sou consolidada e qualificada, mas com o trabalhando presencial predominantemente.
 
-THreadoff da vida de programação
+Threadoff da vida de programação
 
 1º Banco de dados mal pensado para uma arquitetura que vai requer escalabilidade. Ou seja, ganha-se tempo com o lançamento do MVP, mas pode travar o desenvolvimento futuro. 
 2º Linguaguem de programação com curva de aprendizado complexa, porém, rápida, mas que não se encontra mão de obra no mercado.
@@ -122,9 +122,10 @@ No geral, é bem simples, e isso importa muito para as pessoas que vão manejar 
 
 **Atividade 05: classes uml**
 
-Classes de uma pipeline
+Classes de parte de camada
 
-![image](imgs/UML2.jpeg)
+
+![image](imgs/UML3.jpeg)
 
 **Atividade 06: Escrever o código em Java**
 
