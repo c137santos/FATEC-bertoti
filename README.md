@@ -136,3 +136,6 @@ Nos arquivos Hostel.java, Acomodacao.java, Alojamento.java, Hospede.java e Reser
 
 Testes de assert com TesteHostel.java
 
+**Atividade 08: Diagrama caso de uso**
+
+![alt text](imgs/image.png)
